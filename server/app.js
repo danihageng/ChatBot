@@ -51,10 +51,19 @@ app.post("/getWelcomeMessage", (req, res) => {
 
 // http://localhost:8000/login
 app.post("/login", (req, res) => {
-  user = req.body.username;
-  Passw = req.body.password;
-  var token = jwt.sign({ user: user, passw: Passw }, 'shhhhh');
-  res.send(`${token}`);
+  // Control if user and password is admin text.
+  if (req.body.username === 'admin' && req.body.password == 'admin') {
+    user = req.body.username;
+    Passw = req.body.password;
+    var token = jwt.sign({ user: user, passw: Passw }, 'shhhhh');
+    // Return the response with the token.
+    res.send(`${token}`);
+  } else {
+     // Return response with error.
+     res
+     .status(401)
+     .json({ message: "Invalid credentials." });
+  }
 });
 
 app.listen(8000, (req, res) => {

@@ -20,6 +20,9 @@
       placeholder="Password"
       class="inputLogin"
     />
+    <div v-if="alertVisible">
+      <p class="error-text">¡Invalid credentials!</p>
+    </div>
     <button
       type="button"
       class="singin"
@@ -46,6 +49,7 @@ export default {
         username: "",
         password: "",
       },
+      alertVisible: false,
     };
   },
   methods: {
@@ -55,14 +59,23 @@ export default {
           username: this.input.username,
           password: this.input.password,
         };
-        const { data } = await axios.post(
-          "http://localhost:8000/login",
-          postData
-        );
-        // Store the Token to manage the session.
-        sessionStorage.setItem("Token", data);
-        this.$emit("authenticated", true);
-        this.$router.replace({ name: "chat" });
+        await axios
+          .post("http://localhost:8000/login", postData)
+          .then((response) => {
+            // Store the Token to manage the session.
+            sessionStorage.setItem("Token", response.data);
+            this.$emit("authenticated", true);
+            this.$router.replace({ name: "chat" });
+            console.log(response);
+          })
+          // control the error when have invalid credentials.
+          .catch((error) => {
+            this.alertVisible = true;
+            setTimeout(() => {
+              this.alertVisible = false;
+            }, 3000);
+            console.log(error.response.data);
+          });
       } else {
         // A Console log is show when username o password is empty.
         console.log("A username and password must be present");
@@ -104,5 +117,12 @@ export default {
   color: black;
   border-radius: 25px;
   font-weight: bold;
+}
+.error-text {
+  color: red;
+  font-weight: 500;
+  padding-bottom: 10px;
+  padding-left: 16%;
+  padding-right: 16%;
 }
 </style>
