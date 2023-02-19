@@ -119,7 +119,6 @@ export default {
   border: 0px;
   color: black;
   border-radius: 25px;
-  font-weight: bold;
 }
 .error-text {
   color: red;
