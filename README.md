@@ -14,6 +14,17 @@ Of course, recommend reading the official site. (https://vuejs.org/guide/quick-s
  
 # To use
 
-In server run "npm install" and then "node app.js".
-In client run "npm install" and then "npm run dev".
-You should be read the README.md on the client folder before run "npm run dev".
+In server run `npm install` and then `node app.js`.
+
+```sh
+npm install
+node app.js
+```
+
+In client run `npm install` and then `npm run dev`.
+You should be read the README.md on the client folder before run `npm run dev`.
+
+```sh
+npm install
+npm run dev
+```
