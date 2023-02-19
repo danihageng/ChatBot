@@ -14,5 +14,6 @@ Of course, recommend reading the official site. (https://vuejs.org/guide/quick-s
  
 # To use
 
-To install the BackEnd, is very easy. In server run "npm install" and then "node app.js".
-In client run "npm install" and then "npm run dev", you should be read the README.md on the client before run "npm run dev".
+In server run "npm install" and then "node app.js".
+In client run "npm install" and then "npm run dev".
+You should be read the README.md on the client folder before run "npm run dev".

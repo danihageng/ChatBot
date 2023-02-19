@@ -1,7 +1,7 @@
 # client
 
 This is a chat app to interact with a bot.<br>
-Use a Vue 3 as a main javascript framework.<br>
+Use Vue 3 as the main javascript framework.<br>
 
 
 ## Technologies
@@ -17,7 +17,7 @@ Use a Vue 3 as a main javascript framework.<br>
 
 You should be installed Node.js
 
-Simply unpack all of these files into a folder and run `npm install` through a console window with that folder opened.<br>
+Just download all these files in one folder and run `npm install` in your console at the address of this folder.<br>
 
 
 # Usage

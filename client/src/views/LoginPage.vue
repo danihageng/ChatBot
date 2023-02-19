@@ -5,7 +5,7 @@
       style="width: 155px; left: 12%"
       alt="Verbio"
     />
-    <h2 class="font-semibold color-red">Login Verbio</h2>
+    <h2 class="font-semibold color-red margin-bottom">Login Verbio</h2>
     <input
       type="text"
       name="username"
@@ -21,7 +21,7 @@
       class="inputLogin"
     />
     <div v-if="alertVisible">
-      <p class="error-text">¡Invalid credentials!</p>
+      <p class="error-text">Invalid credentials.</p>
     </div>
     <button
       type="button"
@@ -64,9 +64,9 @@ export default {
           .then((response) => {
             // Store the Token to manage the session.
             sessionStorage.setItem("Token", response.data);
+            // event to show logout button.
             this.$emit("authenticated", true);
             this.$router.replace({ name: "chat" });
-            console.log(response);
           })
           // control the error when have invalid credentials.
           .catch((error) => {
@@ -102,6 +102,9 @@ export default {
 .color-red {
   color: rgb(255, 31, 88);
   padding-left: 39px;
+}
+.margin-bottom {
+  margin-bottom: 10px;
 }
 .inputLogin {
   background-color: aliceblue !important;

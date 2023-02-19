@@ -3,8 +3,8 @@ describe("Check the chatPage.", () => {
     cy.visit("/login");
 
     // fill in the form
-    cy.get("input[name=username]").type("test@test.com");
-    cy.get("input[name=password]").type("test1234");
+    cy.get("input[name=username]").type("admin");
+    cy.get("input[name=password]").type("admin");
 
     // submit the form
     cy.get("button").contains("Sign in").click();
@@ -23,8 +23,8 @@ describe("Check the chatPage.", () => {
     cy.visit("/login");
 
     // fill in the form
-    cy.get("input[name=username]").type("test@test.com");
-    cy.get("input[name=password]").type("test1234");
+    cy.get("input[name=username]").type("admin");
+    cy.get("input[name=password]").type("admin");
 
     // submit the form
     cy.get("button").contains("Sign in").click();
@@ -41,13 +41,13 @@ describe("Check the chatPage.", () => {
   });
 });
 
-describe("Check LogOut Button", () => {
+describe("Check LogOut Button.", () => {
   it("Check LogOut Button", () => {
     cy.visit("/login");
 
     // fill in the form
-    cy.get("input[name=username]").type("test@test.com");
-    cy.get("input[name=password]").type("test1234");
+    cy.get("input[name=username]").type("admin");
+    cy.get("input[name=password]").type("admin");
 
     // submit the form
     cy.get("button").contains("Sign in").click();
@@ -58,8 +58,8 @@ describe("Check LogOut Button", () => {
     cy.visit("/login");
 
     // fill in the form
-    cy.get("input[name=username]").type("test@test.com");
-    cy.get("input[name=password]").type("test1234");
+    cy.get("input[name=username]").type("admin");
+    cy.get("input[name=password]").type("admin");
 
     // submit the form
     cy.get("button").contains("Sign in").click();
@@ -72,4 +72,3 @@ describe("Check LogOut Button", () => {
     cy.get(".logoutButton").should("not.exist");
   });
 });
-
