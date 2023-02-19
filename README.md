@@ -1,6 +1,6 @@
 # AI Chatbot
 
-An AI chatbot created in Vue and Node. This chatbot relies upon the cleverbot-free npm package for AI data processing.
+An AI chatbot created in Vue and Node.
 
 The main explanation of the frontend is in the README.md of the client folder.
 
