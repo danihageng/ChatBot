@@ -38,6 +38,7 @@ This is only useable / possible if you have an actual server to run these built 
 npm run test:e2e:dev
 ```
 
+Simply try the test, run `npm run test:e2e:dev`, this command line is for show all that you need to see in the test.
 This runs the end-to-end tests against the Vite development server.
 It is much faster than the production build.
 
