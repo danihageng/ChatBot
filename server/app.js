@@ -13,11 +13,32 @@ let Passw = "";
 
 // URL http://localhost:8000/sendMMessage
 app.post("/sendMMessage", async (req, res) => {
-  const { message } = req.body;
-  const response = await cleverbot(message);
-  res.json({
-    response: response,
-  });
+  const message = req.body.message;
+  const token = req.body.token;
+  console.log(message, token);
+  if(token){
+    // Verify the token using jwt.verify method
+    const decode = jwt.verify(token, 'shhhhh');
+    if(user == decode.user && Passw == decode.passw) {
+      //  Return response with response data
+      const response = await cleverbot(message);
+      res.json({
+        response: response,
+      });
+    // If the token not is verify, return token invalid 
+    } else {
+      // Return response with error
+      res
+      .status(401)
+      .json({ message: "The token your provided are invalid" });
+    }
+  // If not send token
+  }else{
+    // Return response with error
+    res
+      .status(401)
+      .json({ message: "The token your provided are invalid" });
+  }
 });
 
 // URL http://localhost:8000/getWelcomeMessage

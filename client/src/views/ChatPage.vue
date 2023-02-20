@@ -86,6 +86,7 @@ export default {
     async function getResponse(message) {
       const postData = {
         message: message,
+        token: sessionStorage.getItem("Token"),
       };
       try {
         const { data } = await axios.post(
