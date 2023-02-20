@@ -12,7 +12,7 @@ let user = "";
 let Passw = "";
 
 // URL http://localhost:8000/sendMMessage
-app.post("/sendMMessage", async (req, res) => {
+app.post("/sendMessage", async (req, res) => {
   const message = req.body.message;
   const token = req.body.token;
   if(token){

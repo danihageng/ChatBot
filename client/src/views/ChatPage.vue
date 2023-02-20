@@ -90,7 +90,7 @@ export default {
       };
       try {
         const { data } = await axios.post(
-          "http://localhost:8000/sendMMessage",
+          "http://localhost:8000/sendMessage",
           postData
         );
         const { response } = data;
