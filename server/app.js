@@ -15,7 +15,6 @@ let Passw = "";
 app.post("/sendMMessage", async (req, res) => {
   const message = req.body.message;
   const token = req.body.token;
-  console.log(message, token);
   if(token){
     // Verify the token using jwt.verify method
     const decode = jwt.verify(token, 'shhhhh');
