@@ -21,8 +21,10 @@ app.post("/sendMMessage", async (req, res) => {
 });
 
 // URL http://localhost:8000/getWelcomeMessage
-app.post("/getWelcomeMessage", (req, res) => {
-  const { token } = req.body;
+app.get("/getWelcomeMessage", (req, res) => {
+  // Obtain the query params.
+  const queryParams = new URLSearchParams(req.url.split('?')[1]);
+  const token = queryParams.get('token');
   // If the token is present
   if(token){
     // Verify the token using jwt.verify method
