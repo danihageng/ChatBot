@@ -52,13 +52,15 @@ export default {
     }
     //Method to obtain the data for chatBot
     async function sendWellcomeMessage() {
-      const postData = {
+      const tokenData = {
         token: sessionStorage.getItem("Token"),
       };
       try {
-        const { data } = await axios.post(
+        const { data } = await axios.get(
           "http://localhost:8000/getWelcomeMessage",
-          postData
+          {
+            params: tokenData,
+          }
         );
         const { response } = data;
         createMessage(response, "bot");
