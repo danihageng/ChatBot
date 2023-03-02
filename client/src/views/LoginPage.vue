@@ -1,11 +1,10 @@
 <template>
   <div id="login">
-    <img
-      src="../../public/Verbio.png"
-      style="width: 155px; left: 12%"
+    <!-- <img
+      src="../../public/favicon.ico"
       alt="Verbio"
-    />
-    <h2 class="font-semibold color-red margin-bottom">Login Verbio</h2>
+    /> -->
+    <h2 class="font-semibold color-red margin-bottom">Login</h2>
     <input
       type="text"
       name="username"
@@ -100,8 +99,8 @@ export default {
   font-weight: bolder;
 }
 .color-red {
-  color: rgb(255, 31, 88);
-  padding-left: 39px;
+  color: rgb(72 69 243);
+  padding-left: 67px;
 }
 .margin-bottom {
   margin-bottom: 10px;
